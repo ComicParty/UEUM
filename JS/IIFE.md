@@ -33,4 +33,7 @@ var iife0 = (function() {
 }());
 ```
 
-
+### 其它参考资料
+[从IIFE讨论表达式和语句](https://unadlib.github.io/2016/10/26/expression-and-statement/)
+[合理使用IIFE优化JS引擎的性能](https://zhuanlan.zhihu.com/p/23629542)
+[javascript模块化编程-详解立即执行函数表达式IIFE](http://www.jianshu.com/p/4dbf4a4c8ebb)
