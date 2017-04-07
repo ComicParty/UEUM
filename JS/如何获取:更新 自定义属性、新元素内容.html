@@ -1,0 +1,130 @@
+<
+!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>如何获取/更新 自定义属性、新元素内容</title>
+  </head>
+<body>
+
+  <label>请输入北京今天空气质量：<input id="aqi-input" type="text"></label>
+  <button id="button">确认填写</button>
+
+  <div>您输入的值是：<span id="aqi-display">尚无录入</span></div>
+<p id="pvalue">a</p>
+<script type="text/javascript">
+// 测试环境：Chrome 版本 56.0.2924.87 (64-bit)
+//        例子是最简单的：元素下面只有文本结点，没有其它节点
+
+// 知识点：
+//                  属性          描述
+//       文本节点：nodeValue       访问节点文字
+//       
+//       包含元素：innerHTML       获取/设置文本和标签
+//               textContent   仅获取/设置文本
+//               innerText     仅获取/设置文本
+
+// 结论：nodeValue\textContent\innerText 属性 ，是 获取「节点」的 内容 以 值的方式 存储在变量中，
+//                     getElementBy**（）方法 ，是 在变量中存储的是地址
+//
+
+// 测试自定义属性 
+var dataSet =document.getElementById('button');
+// document.write('判断有无「idd」这个属性：' + dataSet.hasAttribute('idd') + '<br>'); //可以省略，因为咱们有代码可以直接查看啊
+dataSet.setAttribute('idd','32'); // 设置idd属性
+document.write('「idd」属性的值为：' + dataSet.getAttribute('idd') + '<br>');
+document.write('判断有无「idd」属性：'+ dataSet.hasAttribute('idd') + '<br><br>');
+dataSet.setAttribute('idd','13232'); // 更改idd属性值
+document.write('「idd」属性的值为：' + dataSet.getAttribute('idd') + '<br>');
+
+
+// nodeValue  访问节点文字
+// var Elep = document.getElementById('pvalue');
+// var ElepValue = Elep.firstChild.nodeValue;      //操作元素的文本节点
+// document.write(ElepValue+ '<br>');//输出：a 
+// var ElepValue1 = Elep.nodeValue;      //操作元素
+// document.write(ElepValue1+ '<br>');//输出：null
+// ElepValue = 'sa';
+// document.write(ElepValue+ '<br>');
+// var ElepValue2 = Elep.firstChild.nodeValue;
+// document.write(ElepValue2+ '<br>');
+
+// textContent
+// var Elep = document.getElementById('pvalue');
+// var ElepValue = Elep.firstChild.textContent;   //操作元素的文本节点
+// document.write(ElepValue + '<br>');//输出：a
+// var ElepValue1 = Elep.textContent;             //直接操作元素
+// document.write(ElepValue1 + '<br>');//输出：a
+// ElepValue ='sa';
+// document.write(ElepValue + '<br>');
+// var ElepValue2 = Elep.firstChild.textContent;
+// document.write(ElepValue2 + '<br>');
+
+//innerText 
+var Elep = document.getElementById('pvalue');
+var ElepValue = Elep.innerText;                 
+document.write(ElepValue + '<br>');
+var ElepValue1 = Elep.firstChild.innerText; //只能 操作元素节点 ，不能操作文本结点 
+document.write(ElepValue1 + '<br>');//输出：undefined
+ElepValue ='sa';
+document.write(ElepValue + '<br>');
+var ElepValue2 = Elep.innerText;
+document.write(ElepValue2 + '<br>');
+Elep.innerText = 'sasa';
+document.write(Elep.innerText);
+
+
+// 只输出a、sa没有什么意义不便于理解，需要改进
+// 
+// 
+// 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//肯定可以有多种方式实现。
+//1document.write("javascript");
+/*
+可用于直接向 HTML 输出流写内容。简单的说就是直接在网页中输出内容。
+第一种:输出内容用""括起，直接输出""号内的内容。
+ 第二种:通过变量，输出内容
+第三种:输出多项内容，内容之间用+号连接
+第四种:输出HTML标签，并起作用，标签使用""括起来。
+ */
+//防攻击 innerHTML
+//
+//
+// (function() {
+      
+//   在注释下方写下代码
+//   给按钮button绑定一个点击事件
+//   在事件处理函数中
+//   获取aqi-input输入的值，并显示在aqi-display中
+  
+
+// })();
+
+</script>
+</body>
+</html>
