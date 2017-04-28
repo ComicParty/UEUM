@@ -20,21 +20,16 @@
 4. 用于防止在两段脚本中因使用相同的变量名产生的冲突。
 
 ### 书写方式
-```
+
 //写法一
-var iife = (function() {
+`var iife = (function() {
     // ...
-})();
+})();`
 
 //写法二
-var iife0 = (function() {
+`var iife0 = (function() {
     // ...
-}());
-```
+}());`
 
-### 其它参考资料
-1.[从IIFE讨论表达式和语句](https://unadlib.github.io/2016/10/26/expression-and-statement/)
 
-2.[合理使用IIFE优化JS引擎的性能](https://zhuanlan.zhihu.com/p/23629542)
 
-3.[javascript模块化编程-详解立即执行函数表达式IIFE](http://www.jianshu.com/p/4dbf4a4c8ebb)
